@@ -22,3 +22,8 @@ The score is displayed in the top-right corner.
 Responsive Design:
 The game works on both desktop and mobile devices.
 Touch and mouse events are supported.
+
+<img width="1468" alt="Screenshot 2025-03-21 at 11 58 25 PM" src="https://github.com/user-attachments/assets/c560d943-0882-4eab-aa22-fc6b22a0eca8" />
+<img width="1470" alt="Screenshot 2025-03-21 at 11 59 14 PM" src="https://github.com/user-attachments/assets/2917572f-91dc-4ad5-9e9e-79932dfe4a6f" />
+
+
