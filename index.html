@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balloon Pop Game</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+  <!-- Title Bar -->
+  <div id="titleBar">
+    <h1>Balloon Pop Game</h1> <!-- Main title of the game -->
+    <p>github.com/vikashrmaa : <span class="author">Vikash Sharma</span></p> <!-- Author's name -->
+  </div>
+
+  <!-- Game Area -->
+  <div id="gameArea">
+    <!-- Score Display -->
+    <div id="score">0</div> <!-- Displays the player's score -->
+
+    <!-- Balloons Container -->
+    <div id="balloonsContainer"></div> <!-- Container for all balloons -->
+
+    <!-- Clouds (decorative elements) -->
+    <div class="cloud" style="width: 120px; height: 60px; top: 15%; left: 10%;"></div>
+    <div class="cloud" style="width: 100px; height: 50px; top: 35%; left: 25%;"></div>
+    <div class="cloud" style="width: 140px; height: 70px; top: 20%; left: 45%;"></div>
+    <div class="cloud" style="width: 110px; height: 55px; top: 40%; left: 65%;"></div>
+    <div class="cloud" style="width: 130px; height: 65px; top: 25%; left: 80%;"></div>
+    <div class="cloud" style="width: 90px; height: 45px; top: 15%; left: 90%;"></div>
+
+    <!-- Pump Section -->
+    <div id="pump">
+      <img id="pumpMain" src="mainbody.png" alt="Pump Body"> <!-- Main body of the pump -->
+      <img id="pumpLever" src="lever.png" alt="Pump Lever"> <!-- Lever of the pump -->
+      <img id="pumpRelease" src="release.png" alt="Pump Release"> <!-- Release part of the pump -->
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>

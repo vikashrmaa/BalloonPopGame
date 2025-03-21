@@ -1,0 +1,189 @@
+/* Reset default styles for all elements */
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in element dimensions */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+/* Set full width and height for the HTML and body */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevents scrolling */
+  background: #fffad1; /* Light yellow background */
+}
+
+/* Title Bar */
+#titleBar {
+  position: fixed; /* Keeps the title bar at the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  text-align: center; /* Centers the text */
+  padding: 10px 0; /* Adds padding */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  z-index: 1000; /* Ensures the title bar is above other elements */
+}
+
+#titleBar h1 {
+  font-size: 32px; /* Large font size for the title */
+  color: #ff6f61; /* Playful pink color */
+  margin: 0; /* Removes default margin */
+  font-family: 'Arial', sans-serif; /* Uses Arial font */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Adds a subtle text shadow */
+}
+
+#titleBar p {
+  font-size: 16px; /* Smaller font size for the author's name */
+  color: #333; /* Dark gray color */
+  margin: 5px 0 0; /* Adds a small margin above the author's name */
+  font-family: 'Arial', sans-serif; /* Uses Arial font */
+}
+
+#titleBar .author {
+  font-weight: bold; /* Makes the author's name bold */
+  color: #ff6f61; /* Matches the title color */
+}
+
+/* Game Area */
+#gameArea {
+  position: relative; /* Allows positioning of child elements */
+  width: 100%;
+  height: 100%;
+  background-image: url('background.png'); /* Background image for the game area */
+  background-size: cover; /* Ensures the background covers the entire area */
+  background-position: center; /* Centers the background image */
+}
+
+/* Score Display */
+#score {
+  position: absolute; /* Positions the score display */
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 10px 20px; /* Adds padding */
+  border-radius: 50%; /* Makes the score display circular */
+  font-size: 24px; /* Large font size */
+  font-weight: bold; /* Makes the text bold */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Adds a shadow */
+  z-index: 1000; /* Ensures the score display is above other elements */
+}
+
+/* Pump Container */
+#pump {
+  position: absolute; /* Positions the pump */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  width: 200px;
+  height: 200px;
+  z-index: 900; /* Ensures the pump is above the balloons */
+  user-select: none; /* Prevents text selection */
+}
+
+#pump img {
+  display: block; /* Ensures images are displayed as blocks */
+  position: absolute; /* Allows precise positioning */
+  transition: transform 0.15s ease; /* Adds smooth transitions */
+}
+
+/* Main pump body */
+#pumpMain {
+  bottom: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  z-index: 1; /* Ensures the main body is behind the lever */
+}
+
+/* Pump lever */
+#pumpLever {
+  bottom: 185px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer; /* Changes the cursor to a pointer */
+  z-index: 0; /* Ensures the lever is behind the main body */
+}
+
+/* Pump release */
+#pumpRelease {
+  right: 160px;
+  width: 180px;
+  height: 160px;
+  transition: transform 0.15s ease; /* Adds smooth transitions */
+}
+
+/* Squeeze effect for lever and main body */
+.lever-pressed {
+  transform: scaleX(0.9) scaleY(1.1); /* Squeezes horizontally and stretches vertically */
+}
+
+/* Push-down effect for lever */
+.push-down {
+  transform: translateY(10px); /* Moves the lever down */
+}
+
+/* Balloons container */
+#balloonsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto; /* Allows clicks on balloons */
+}
+
+/* Each balloon */
+.balloon {
+  position: absolute;
+  cursor: pointer; /* Changes the cursor to a pointer */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Adds smooth transitions */
+}
+
+.balloon img.bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Makes the balloon round */
+}
+
+.balloon .letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the letter */
+  width: 60%;
+  height: auto;
+  pointer-events: none; /* Prevents clicks on the letter */
+}
+
+/* Balloon pop animation */
+.pop {
+  animation: popAnim 0.5s forwards; /* Plays the pop animation */
+}
+
+@keyframes popAnim {
+  0% { transform: scale(1); opacity: 1; } /* Starts at normal size */
+  100% { transform: scale(1.5); opacity: 0; } /* Expands and fades out */
+}
+
+/* Balloon fragments */
+.balloon-fragment {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 0, 0, 0.8); /* Red color for fragments */
+  border-radius: 50%; /* Makes fragments round */
+  animation: disperse 1s ease-out forwards; /* Plays the dispersion animation */
+}
+
+@keyframes disperse {
+  0% { transform: translate(0, 0); opacity: 1; } /* Starts at the center */
+  100% { transform: translate(var(--dx), var(--dy)); opacity: 0; } /* Moves outward and fades */
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50px; /* Makes clouds round */
+  opacity: 0.8; /* Makes clouds semi-transparent */
+}
